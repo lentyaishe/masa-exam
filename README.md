@@ -73,24 +73,24 @@
 
 11. **Authentication & Authorization** *=> 7 points*
 
-<!-- Authentication & Authorization - first comes authentication, then authorization. 
-Authentication is a process of verification the subject by comparing some unique information (password, fingertips, voice, etc) provided by user with data stored in a database. Authorization is a process of providing a subject the rights to perform certain actions. -->
+ Authentication & Authorization - first comes authentication, then authorization. 
+Authentication is a process of verification the subject by comparing some unique information (password, fingertips, voice, etc) provided by user with data stored in a database. Authorization is a process of providing a subject the rights to perform certain actions. 
 
 12. **Stored procedure** *=> 3 points*
 
-<!-- Stored procedure is a database object, a set of SQL statements which is compiled once and stored on the server. -->
+Stored procedure is a database object, a set of SQL statements which is compiled once and stored on the server.
 
 13. **Git rebase** *=> 4 points*
 
-<!-- Git rebase - one of the ways in git to combine the changes of two branches. Rebase compresses all changes into one patch and then integrates the patch into the target branch. Unwanted history is removed in the process. -->
+Git rebase - one of the ways in git to combine the changes of two branches. Rebase compresses all changes into one patch and then integrates the patch into the target branch. Unwanted history is removed in the process.
 
 14. **Generics** *=> 4 points*
 
-<!-- Generics - the ability to create components that work not only with one data type. Generics allow to create reusable components that work with different types of data passed to them -->
+Generics - the ability to create components that work not only with one data type. Generics allow to create reusable components that work with different types of data passed to them
 
 15. **Middleware** *=> 4 points*
 
-<!-- Middleware is a binding software that helps an application and a server communicate with each other. -->
+Middleware is a binding software that helps an application and a server communicate with each other.
  
 ## Part II: Practice on paper *=> 45 points*
 
@@ -117,7 +117,9 @@ Authentication is a process of verification the subject by comparing some unique
 		    return  date;
 	    }
 
-<!-- public static addMonths(date: Date, value: number): Date {
+----------------------------------------------------------------------------------------
+
+public static addMonths(date: Date, value: number): Date {
     let expectedMonth: number = date.getMonth() + value;
     if (expectedMonth > 11) { 
         expectedMonth = expectedMonth % 12;
@@ -134,7 +136,7 @@ Authentication is a process of verification the subject by comparing some unique
     }
 
     return  date;
-} -->
+}
 
 
 17. **Having the following DB tables diagram:** *=> 10 points*
@@ -149,16 +151,16 @@ You need to write a query that returns for each student his/her parents' informa
 | Mary Smith | Klark Smith (07-2134897) |
 | Patrice Raymond | Orphan |
 
-<!-- SELECT first_name.parent, last_name.parent, first_name.student, last_name.student, phone.parent FROM parent INNER JOIN 
-student ON parent.id = student.id;-->
+SELECT first_name.parent, last_name.parent, first_name.student, last_name.student, phone.parent FROM parent INNER JOIN 
+student ON parent.id = student.id;
 
 18. **Write a method in JS/TS that gets as an argument an array of numbers and returns the sum of all array members**. *=> 5 points*
 
-<!-- public static sumArrayNumbers(array: number[]): number {
+ public static sumArrayNumbers(array: number[]): number {
         let sum = 0;
         if (array.length > 0) sum = array.reduce((prev, curr) => prev + curr);
         return sum;
-    } -->
+    } 
 
 19. **Explain the following piece of code:** *=> 5 points*
 
@@ -167,9 +169,9 @@ student ON parent.id = student.id;-->
 			return Array(+(zeroes > 0 && zeroes)).join("0") + input.toString();
 		}
 
-<!-- The method padLeft gets as arguments numbers (input and places) and returns a string. 
+The method padLeft gets as arguments numbers (input and places) and returns a string. 
 At first const zeroes (which is a number) is created. This const is equal to the argument "places" minus the length of input which is converted to string plus 1.
-The array with empty values is returned joined in a string with 0 separator and to this string is concatenated the argument "input" converted to the string. If there are zeroes and they are more than 0 the number of empty values in array is a number of zeroes -->
+The array with empty values is returned joined in a string with 0 separator and to this string is concatenated the argument "input" converted to the string. If there are zeroes and they are more than 0 the number of empty values in array is a number of zeroes
 
 20. **Fix the following code and fill the required gaps in it by the coding standards. The purpose of this code is to verify the user is a member of a specific role and in case the user is the user data is returned by the isUserPermitted() method. Treat the comments as actual code written that should not be changed:** *=> 15 points*
 
