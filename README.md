@@ -151,7 +151,7 @@ You need to write a query that returns for each student his/her parents' informa
 | Mary Smith | Klark Smith (07-2134897) |
 | Patrice Raymond | Orphan |
 
-SELECT first_name.parent, last_name.parent, first_name.student, last_name.student, phone.parent FROM parent INNER JOIN 
+SELECT first_name.student, last_name.student, first_name.parent, last_name.parent, phone.parent FROM parent LEFT JOIN 
 student ON parent.id = student.id;
 
 18. **Write a method in JS/TS that gets as an argument an array of numbers and returns the sum of all array members**. *=> 5 points*
@@ -223,6 +223,56 @@ The array with empty values is returned joined in a string with 0 separator and 
 		}
 
 
+
+
+
+
+		interface user {
+			id: number;
+			firstName: string;
+			lastName: string;
+		}
+
+		interface dbUser {
+			id: number;
+			first_name: string;
+			last_name: string;
+		}
+
+		interface role {
+			id: number;
+			userIds: number[];
+		}
+
+		interface dbRole {
+			id: number;
+			user_id: number;
+		}
+		class Service {
+			public isUserPermitted(userId: number, roleId: number): Promise<user> {
+			return new Promise<user>((resolve, reject) => {
+				Promise.all([
+					this.getUser(userId),
+					this.getRole(roleId)
+				])
+				.then((results: [user , role]) => {
+					const isUserFoundInRolesArray = results[1].userIds.indexOf(results[0].id) > -1;
+					if (isUserFoundInRolesArray) resolve(results[0])
+					else reject('No permission');
+				});
+			});
+		}
+
+		private getUser(userId: number): Promise<user> {
+			return new Promise<user>((resolve, reject) => {
+				// Access to the DB that returns the user data by id as dbUser or null
+
+					result = this.parseDbUser(dbUser);
+			resolve(result);
+				});
+			}
+
+			
 ## Part III: Practice on dev machine *=> 33 points*
 
 *No restrictions on online resources usage*
