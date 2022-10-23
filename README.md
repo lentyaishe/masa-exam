@@ -79,14 +79,26 @@ _Please, do NOT use online resources as an assistance for this part of the exam_
 ## Section B: Please, explain the following terms the best way you can _=> 22 points_
 
 11. **Authentication & Authorization** _=> 7 points_
+    Authentication is a method to check that user with definite login and password is in the DB.
+
+Authorization is the method to define user's rights accodding to his role in the system.
 
 12. **Stored procedure** _=> 3 points_
 
+It is a kind of querry to the DB witch is stored on the server. Has one or more operators transact-sql. We can call SP with its name in the code.
+
 13. **Git rebase** _=> 4 points_
+
+It is useful way to move your commits to the more general branch. Your commits goes to the head of branch.
 
 14. **Generics** _=> 4 points_
 
+It is a way to use different types in Typescript. They are used for describe close but having some differences types.
+
 15. **Middleware** _=> 4 points_
+
+It is a kind of method that handles some logic in the middle of the process. Then it transfer data to the next function or makes some kind of reject.
+For example it can be used in authorization and verify a role of the user.
 
 ## Part II: Practice on paper _=> 45 points_
 
