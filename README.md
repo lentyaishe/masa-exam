@@ -118,7 +118,7 @@ _No restrictions on online resources usage. You also may use your development ma
 
             date.setMonth(date.getMonth() + value);
             const daysToAdd: number = date.getMonth() >  expectedMonth ? -1 : 1;
-            while (date.getMonth() !== expectedMonth) {
+            if (date.getMonth() !== expectedMonth) {                                      //  if instead of while
                 date.setDate(date.getDate() + daysToAdd);
             }
 
@@ -137,7 +137,26 @@ You need to write a query that returns for each student his/her parents' informa
 | Mary Smith      | Klark Smith (07-2134897)                     |
 | Patrice Raymond | Orphan                                       |
 
+SELECT
+(s.firstname + ' ' + s.lastname) AS Student,
+string_agg(p.Parents, ',') AS Parents
+FROM students s
+INNER JOIN parent_to_student sp ON s.id = sp.id
+INNER JOIN parents p ON p.id = sp.id
+IF Parents IS NULL
+THEN Parents = 'Orphan';
+
+I didn't find how to use IF/ELSE in this query for adding Orphan
+
 18. **Write a method in JS/TS that gets as an argument an array of numbers and returns the sum of all array members**. _=> 5 points_
+
+function arraySum(arr) {
+let result = 0;
+for (i = 0; i < arr.length; i++) {
+result += arr[i];
+}
+return result;
+}
 
 19. **Explain the following piece of code:** _=> 5 points_
 
@@ -145,6 +164,8 @@ You need to write a query that returns for each student his/her parents' informa
         	const zeroes: number = places - input.toString().length + 1;
         	return Array(+(zeroes > 0 && zeroes)).join("0") + input.toString();
         }
+
+The padLeft() method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the left of the current string.
 
 20. **Fix the following code and fill the required gaps in it by the coding standards. The purpose of this code is to verify the user is a member of a specific role and in case the user is the user data is returned by the isUserPermitted() method. Treat the comments as actual code written that should not be changed:** _=> 15 points_
 
