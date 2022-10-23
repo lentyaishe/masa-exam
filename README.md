@@ -117,26 +117,26 @@ Middleware is a binding software that helps an application and a server communic
 		    return  date;
 	    }
 
-----------------------------------------------------------------------------------------
 
-public static addMonths(date: Date, value: number): Date {
-    let expectedMonth: number = date.getMonth() + value;
-    if (expectedMonth > 11) { 
-        expectedMonth = expectedMonth % 12;
-    }
 
-    if (expectedMonth < 0) {
-        expectedMonth += 12;
-    }
+		public static addMonths(date: Date, value: number): Date {
+    		let expectedMonth: number = date.getMonth() + value;
+    		if (expectedMonth > 11) { 
+        		expectedMonth = expectedMonth % 12;
+    		}
 
-    date.setMonth(date.getMonth() + value);
-    const daysToAdd: number = date.getMonth() >  expectedMonth ? -1 : 1;
-    while (date.getMonth() !== expectedMonth) {
-        date.setDate(date.getDate() + daysToAdd);
-    }
+    		if (expectedMonth < 0) {
+        		expectedMonth += 12;
+   		 	}
 
-    return  date;
-}
+    		date.setMonth(date.getMonth() + value);
+    		const daysToAdd: number = date.getMonth() >  expectedMonth ? -1 : 1;
+    		while (date.getMonth() !== expectedMonth) {
+        		date.setDate(date.getDate() + daysToAdd);
+    		}
+
+    		return  date;
+		}
 
 
 17. **Having the following DB tables diagram:** *=> 10 points*
